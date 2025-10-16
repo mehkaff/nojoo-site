@@ -1,276 +1,262 @@
 <!DOCTYPE html>
 <html lang="fa">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>نوجو | ماجراجویی یادگیری</title>
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;600&display=swap');
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>نوجو | ماجراجویی یادگیری</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;600&display=swap');
 
-    body {
-      font-family: 'Vazirmatn', sans-serif;
-      direction: rtl;
-      background: linear-gradient(135deg, #f9fbfd, #e5ecf4);
-      color: #2c3e50;
-      margin: 0;
-      padding: 0;
-      text-align: center;
-    }
+    body {
+      font-family: 'Vazirmatn', sans-serif;
+      direction: rtl;
+      background: linear-gradient(135deg, #f9fbfd, #e5ecf4);
+      color: #2c3e50;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
 
-    h1 {
-      font-size: 2.8em;
-      margin-top: 30px;
-      color: #1e293b;
-    }
+    h1 {
+      font-size: 2.8em;
+      margin-top: 30px;
+      color: #1e293b;
+    }
 
-    h2 {
-      color: #334155;
-      font-weight: 600;
-    }
+    h2 {
+      color: #334155;
+      font-weight: 600;
+    }
 
-    p {
-      font-size: 1.1em;
-      line-height: 1.8;
-      margin: 15px;
-    }
+    p {
+      font-size: 1.1em;
+      line-height: 1.8;
+      margin: 15px;
+    }
 
-    .page {
-      display: none;
-      padding: 20px;
-      animation: fadeIn 0.6s ease;
-      min-height: 100vh;
-      box-sizing: border-box;
-    }
+    .page {
+      display: none;
+      padding: 20px;
+      animation: fadeIn 0.6s ease;
+      min-height: 100vh;
+      box-sizing: border-box;
+    }
 
-    .active {
-      display: block;
-    }
+    .active {
+      display: block;
+    }
 
-    button {
-      background: #2563eb;
-      color: white;
-      border: none;
-      border-radius: 12px;
-      padding: 14px 28px;
-      font-size: 1.1em;
-      margin: 15px;
-      cursor: pointer;
-      transition: 0.3s;
-    }
+    button {
+      background: #2563eb;
+      color: white;
+      border: none;
+      border-radius: 12px;
+      padding: 14px 28px;
+      font-size: 1.1em;
+      margin: 15px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
 
-    button:hover {
-      background: #1e40af;
-    }
+    button:hover {
+      background: #1e40af;
+    }
 
-    .fields {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 15px;
-      justify-content: center;
-      margin-top: 30px;
-      padding: 0 15px;
-      max-width: 900px;
-      margin-left: auto;
-      margin-right: auto;
-    }
+    .fields {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 15px;
+      justify-content: center;
+      margin-top: 30px;
+      padding: 0 15px;
+      max-width: 900px;
+      margin-left: auto;
+      margin-right: auto;
+    }
 
-    .field-btn:hover {
-      transform: translateY(-4px);
-      background: #f8fafc;
-    }
+    .field-btn {
+      background: white;
+      color: #1e293b;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+      border-radius: 16px;
+      padding: 24px 12px;
+      cursor: pointer;
+      transition: all 0.3s;
+      font-weight: 500;
+    }
 
-    .content-box {
-      max-width: 800px;
-      margin: 0 auto;
-      text-align: justify;
-      line-height: 2;
-      background: white;
-      padding: 25px;
-      border-radius: 18px;
-      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
-    }
+    .field-btn:hover {
+      transform: translateY(-4px);
+      background: #f8fafc;
+    }
 
-    .keywords {
-      background: #f1f5f9;
-      border-radius: 10px;
-      padding: 10px;
-      margin-top: 10px;
-      font-size: 0.95em;
-      text-align: center;
-      color: #334155;
-    }
+    .content-box {
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: justify;
+      line-height: 2;
+      background: white;
+      padding: 25px;
+      border-radius: 18px;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
+    }
 
-    .links a {
-      display: block;
-      color: #2563eb;
-      text-decoration: none;
-      margin: 5px 0;
-      word-break: break-all;
-    }
+    .keywords {
+      background: #f1f5f9;
+      border-radius: 10px;
+      padding: 10px;
+      margin-top: 10px;
+      font-size: 0.95em;
+      text-align: center;
+      color: #334155;
+    }
 
-    .links a:hover {
-      text-decoration: underline;
-    }
+    .links a {
+      display: block;
+      color: #2563eb;
+      text-decoration: none;
+      margin: 5px 0;
+      word-break: break-all;
+    }
 
-    img.logo {
-      width: 120px;
-      margin-top: 50px;
-    }
+    .links a:hover {
+      text-decoration: underline;
+    }
 
-    @media (max-width: 600px) {
-      h1 {
-        font-size: 2em;
-      }
-      button {
-        width: 80%;
-        font-size: 1em;
-      }
-      .field-btn {
-        padding: 20px;
-        font-size: 1em;
-      }
-      .content-box {
-        padding: 20px;
-      }
-    }
+    img.logo {
+      width: 120px;
+      margin-top: 50px;
+    }
 
-    @keyframes fadeIn {
-      from {opacity: 0;}
-      to {opacity: 1;}
-    }
-  </style>
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 2em;
+      }
+      button {
+        width: 80%;
+        font-size: 1em;
+      }
+      .field-btn {
+        padding: 20px;
+        font-size: 1em;
+      }
+      .content-box {
+        padding: 20px;
+      }
+    }
+
+    @keyframes fadeIn {
+      from {opacity: 0;}
+      to {opacity: 1;}
+    }
+  </style>
 </head>
 <body>
 
-    <div id="welcome" class="page active">
-    <img src="logo.png" alt="نوجو لوگو" class="logo">
-    <h1>نوجو</h1>
-    <p>دل رو به نوجو بده، راهو نشونت بده 🌱</p>
-    <button onclick="goTo('fields')">شروع ماجراجویی</button>
-  </div>
+  <!-- 🏠 Welcome -->
+  <div id="welcome" class="page active">
+    <img src="logo.png" alt="نوجو لوگو" class="logo">
+    <h1>نوجو</h1>
+    <p>دل رو به نوجو بده، راهو نشونت بده 🌱</p>
+    <button onclick="goTo('fields')">شروع ماجراجویی</button>
+  </div>
 
-    <div id="fields" class="page">
-    <h2>یکی از مسیرهای نوجو را انتخاب کن:</h2>
-    <div class="fields">
-      <div class="field-btn" onclick="chooseField('داستان‌گویی دیجیتال')">📖 داستان‌گویی دیجیتال</div>
-      <div class="field-btn" onclick="chooseField('هوش مصنوعی در الکترونیک')">⚡ هوش مصنوعی در الکترونیک</div>
-      <div class="field-btn" onclick="chooseField('دیزاین')">🎨 دیزاین</div>
-      <div class="field-btn" onclick="chooseField('مارکتینگ')">📢 مارکتینگ</div>
-      <div class="field-btn" onclick="chooseField('وایب کدینگ')">💻 وایب کدینگ</div>
-      <div class="field-btn" onclick="chooseField('مدیریت پروژه')">📅 مدیریت پروژه</div>
-    </div>
-  </div>
+  <!-- 🚪 Field Selection -->
+  <div id="fields" class="page">
+    <h2>یکی از مسیرهای نوجو را انتخاب کن:</h2>
+    <div class="fields">
+      <div class="field-btn" onclick="chooseField('داستان‌گویی دیجیتال')">📖 داستان‌گویی دیجیتال</div>
+      <div class="field-btn" onclick="chooseField('هوش مصنوعی در الکترونیک')">⚡ هوش مصنوعی در الکترونیک</div>
+      <div class="field-btn" onclick="chooseField('دیزاین')">🎨 دیزاین</div>
+      <div class="field-btn" onclick="chooseField('مارکتینگ')">📢 مارکتینگ</div>
+      <div class="field-btn" onclick="chooseField('وایب کدینگ')">💻 وایب کدینگ</div>
+      <div class="field-btn" onclick="chooseField('مدیریت پروژه')">📅 مدیریت پروژه</div>
+    </div>
+  </div>
 
-    <div id="challenge" class="page">
-    <div class="content-box">
-      <h2 id="challenge-title"></h2>
-      <p id="challenge-desc"></p>
-      <h3>🎯 چالش واقعی</h3>
-      <p id="challenge-task"></p>
+  <!-- 🧠 Challenge Page -->
+  <div id="challenge" class="page">
+    <div class="content-box">
+      <h2 id="challenge-title"></h2>
+      <p id="challenge-desc"></p>
+      <h3>🎯 چالش واقعی</h3>
+      <p id="challenge-task"></p>
 
-      <h3>🔗 لینک‌ها برای یادگیری بیشتر</h3>
-      <div id="links" class="links"></div>
+      <h3>🔗 لینک‌ها برای یادگیری بیشتر</h3>
+      <div id="links" class="links"></div>
 
-      <h3>🔍 کلمات کلیدی برای جست‌وجو</h3>
-      <div id="keywords" class="keywords"></div>
+      <h3>🔍 کلمات کلیدی برای جست‌وجو</h3>
+      <div id="keywords" class="keywords"></div>
 
-      <p style="margin-top:30px; font-style:italic; color:#555; text-align:center;">
-        ✨ این ماجراجویی فقط برای شناخت دنیای هر حرفه‌ست. مهم نیست خروجی کامل باشه، مهم اینه که بفهمی در اون مسیر چه اتفاقی می‌افته.
-      </p>
-      <div style="text-align:center;">
-        <button onclick="goTo('fields')">بازگشت به مسیرها</button>
-      </div>
-    </div>
-  </div>
+      <p style="margin-top:30px; font-style:italic; color:#555; text-align:center;">
+        ✨ این ماجراجویی فقط برای شناخت دنیای هر حرفه‌ست. مهم نیست خروجی کامل باشه، مهم اینه که بفهمی در اون مسیر چه اتفاقی می‌افته.
+      </p>
+      <div style="text-align:center;">
+        <button onclick="goTo('fields')">بازگشت به مسیرها</button>
+      </div>
+    </div>
+  </div>
 
-  <script>
-    const data = {
-      'مدیریت پروژه': {
-        desc: `مدیریت پروژه یعنی هدایت تیم، تقسیم وظایف و کنترل زمان‌بندی برای رسیدن به هدف مشخص.`,
-        task: `فرض کن مدیر پروژه‌ی تیمی هستی که قراره در سه هفته اپی برای مدیریت هزینه‌های دانشجویی بسازه. 
-        چالش تو اینه که مراحل پروژه (تحقیق، طراحی، توسعه، تست، معرفی) رو مشخص کنی و برای هر مرحله خروجی و زمان بده.
-        🎯 خروجی نهایی: جدول زمان‌بندی ساده با مراحل و تحویل‌های هر هفته.`,
-        links: [
-          'https://www.youtube.com/watch?v=Z3usMyZ5eXA', // Project Management for Beginners
-          'https://www.aparat.com/v/ap8gQ'
-        ],
-        keywords: ['برنامه‌ریزی پروژه', 'مدیریت تیم', 'زمان‌بندی', 'وظایف پروژه']
-      },
-      'مارکتینگ': {
-        desc: `مارکتینگ یعنی شناخت مردم و ساختن تجربه‌ای که نشون بده محصول واقعاً برای اون‌هاست.`,
-        task: `فرض کن یه برند نوشیدنی سالم داری که مردم فکر می‌کنن طعمش خوب نیست. 
-        چالش تو اینه که با درک مخاطب، کمپینی طراحی کنی که این باور رو تغییر بده. 
-        🎯 خروجی نهایی: طرح کمپین شامل پیام اصلی، رسانه مورد استفاده و احساسی که باید منتقل بشه.`,
-        links: [
-          'https://www.youtube.com/watch?v=avE-uvLPSN4', // Beginner Marketing Fundamentals
-          'https://www.aparat.com/v/2YYbS'
-        ],
-        keywords: ['بازاریابی محتوا', 'تحلیل مخاطب', 'تبلیغات خلاق', 'رسانه اجتماعی']
-      },
-      'دیزاین': {
-        desc: `دیزاین یعنی خلق تجربه‌ای که کاربر حس کنه محصول برای او طراحی شده.`,
-        task: `فرض کن می‌خوای اپ رزرو میز کافه طراحی کنی. مسیر کاربر از ورود تا رزرو نهایی رو تصور کن و مشخص کن کجا ممکنه سردرگم بشه.
-        🎯 خروجی نهایی: فلو ساده از مراحل کاربر و توضیح تصمیم‌های طراحی.`,
-        links: [
-          'https://www.youtube.com/watch?v=GQS7wPujL2k', // Graphic Design Basics | FREE COURSE
-          'https://www.aparat.com/v/yEEB6'
-        ],
-        keywords: ['UI/UX', 'تجربه کاربری', 'طراحی رابط کاربر', 'اصول رنگ']
-      },
-      'هوش مصنوعی در الکترونیک': {
-        desc: `در الکترونیک، هوش مصنوعی یعنی تصمیم‌گیری هوشمند برای صرفه‌جویی و کنترل بهتر انرژی.`,
-        task: `فرض کن سیستمی بسازی که برق خوابگاه رو هوشمند کنترل کنه. 
-        باید مشخص کنی سیستم چه داده‌هایی می‌گیره (مثل نور یا حضور افراد) و بر چه اساس تصمیم می‌گیره وسایل روشن یا خاموش شن.
-        🎯 خروجی نهایی: دیاگرام ساده از ورودی‌ها، منطق تصمیم‌گیری و خروجی‌ها.`,
-        links: [
-          'https://www.youtube.com/watch?v=rju9Uxtw0VI' // Electronics Sourcing Expert on AI, Robotics & Industry 4.0
-        ],
-        keywords: ['هوش مصنوعی', 'الکترونیک هوشمند', 'سیستم کنترل', 'حسگر و داده']
-      },
-      'وایب کدینگ': {
-        desc: `وایب کدینگ یعنی زنده کردن ایده‌ها با تکنولوژی برای ساخت ابزارهای مفید یا الهام‌بخش.`,
-        task: `فرض کن می‌خوای یه برنامه ساده بسازی که به زندگی روزمره مردم کمک کنه — مثلاً یادآور، شمارنده حال خوب یا پیام الهام‌بخش روزانه.
-        🎯 خروجی نهایی: طرح ایده برنامه و توضیح اینکه چطور کار می‌کنه و چه احساسی ایجاد می‌کنه.`,
-        links: [
-          'https://www.youtube.com/watch?v=4JzDttgdILQ' // Creative Coding for Beginners - Full Course!
-        ],
-        keywords: ['برنامه‌نویسی ساده', 'اپلیکیشن‌های مفید', 'توسعه وب', 'کدنویسی خلاق']
-      },
-      'داستان‌گویی دیجیتال': {
-        desc: `داستان‌گویی دیجیتال یعنی روایت احساسی برند برای انتقال ارزش و هدف.`,
-        task: `فرض کن برند قهوه ارگانیک ازت خواسته داستانش رو در شبکه‌های اجتماعی تعریف کنی. 
-        از دید کشاورز یا مشتری روایت کن تا حس ارتباط با طبیعت منتقل بشه.
-        🎯 خروجی نهایی: طرح سه‌مرحله‌ای از داستان برند (شروع، اوج، پیام نهایی).`,
-        links: [
-          'https://www.youtube.com/watch?v=LVKeO5IIR_A', // Create a digital story
-          'https://www.aparat.com/v/XMSj0'
-        ],
-        keywords: ['داستان‌سرایی برند', 'بازاریابی احساسی', 'محتوای دیجیتال', 'روایت‌پردازی']
-      }
-    };
+  <script>
+    const data = {
+      'مدیریت پروژه': {
+        desc: 'مدیریت پروژه یعنی هدایت تیم، تقسیم وظایف و کنترل زمان‌بندی برای رسیدن به هدف مشخص.',
+        task: 'فرض کن مدیر پروژه‌ی تیمی هستی که قراره در سه هفته اپی برای مدیریت هزینه‌های دانشجویی بسازه. چالش تو اینه که مراحل پروژه (تحقیق، طراحی، توسعه، تست، معرفی) رو مشخص کنی و برای هر مرحله خروجی و زمان بده. 🎯 خروجی نهایی: جدول زمان‌بندی ساده با مراحل و تحویل‌های هر هفته.',
+        links: ['https://www.youtube.com/watch?v=Z3usMyZ5eXA', 'https://www.aparat.com/v/ap8gQ'],
+        keywords: ['برنامه‌ریزی پروژه', 'مدیریت تیم', 'زمان‌بندی', 'وظایف پروژه']
+      },
+      'مارکتینگ': {
+        desc: 'مارکتینگ یعنی شناخت مردم و ساختن تجربه‌ای که نشون بده محصول واقعاً برای اون‌هاست.',
+        task: 'فرض کن یه برند نوشیدنی سالم داری که مردم فکر می‌کنن طعمش خوب نیست. چالش تو اینه که با درک مخاطب، کمپینی طراحی کنی که این باور رو تغییر بده. 🎯 خروجی نهایی: طرح کمپین شامل پیام اصلی، رسانه مورد استفاده و احساسی که باید منتقل بشه.',
+        links: ['https://www.youtube.com/watch?v=avE-uvLPSN4', 'https://www.aparat.com/v/2YYbS'],
+        keywords: ['بازاریابی محتوا', 'تحلیل مخاطب', 'تبلیغات خلاق', 'رسانه اجتماعی']
+      },
+      'دیزاین': {
+        desc: 'دیزاین یعنی خلق تجربه‌ای که کاربر حس کنه محصول برای او طراحی شده.',
+        task: 'فرض کن می‌خوای اپ رزرو میز کافه طراحی کنی. مسیر کاربر از ورود تا رزرو نهایی رو تصور کن و مشخص کن کجا ممکنه سردرگم بشه. 🎯 خروجی نهایی: فلو ساده از مراحل کاربر و توضیح تصمیم‌های طراحی.',
+        links: ['https://www.youtube.com/watch?v=GQS7wPujL2k', 'https://www.aparat.com/v/yEEB6'],
+        keywords: ['UI/UX', 'تجربه کاربری', 'طراحی رابط کاربر', 'اصول رنگ']
+      },
+      'هوش مصنوعی در الکترونیک': {
+        desc: 'در الکترونیک، هوش مصنوعی یعنی تصمیم‌گیری هوشمند برای صرفه‌جویی و کنترل بهتر انرژی.',
+        task: 'فرض کن سیستمی بسازی که برق خوابگاه رو هوشمند کنترل کنه. باید مشخص کنی سیستم چه داده‌هایی می‌گیره (مثل نور یا حضور افراد) و بر چه اساس تصمیم می‌گیره وسایل روشن یا خاموش شن. 🎯 خروجی نهایی: دیاگرام ساده از ورودی‌ها، منطق تصمیم‌گیری و خروجی‌ها.',
+        links: ['https://www.youtube.com/watch?v=rju9Uxtw0VI'],
+        keywords: ['هوش مصنوعی', 'الکترونیک هوشمند', 'سیستم کنترل', 'حسگر و داده']
+      },
+      'وایب کدینگ': {
+        desc: 'وایب کدینگ یعنی زنده کردن ایده‌ها با تکنولوژی برای ساخت ابزارهای مفید یا الهام‌بخش.',
+        task: 'فرض کن می‌خوای یه برنامه ساده بسازی که به زندگی روزمره مردم کمک کنه — مثلاً یادآور، شمارنده حال خوب یا پیام الهام‌بخش روزانه. 🎯 خروجی نهایی: طرح ایده برنامه و توضیح اینکه چطور کار می‌کنه و چه احساسی ایجاد می‌کنه.',
+        links: ['https://www.youtube.com/watch?v=4JzDttgdILQ'],
+        keywords: ['برنامه‌نویسی ساده', 'اپلیکیشن‌های مفید', 'توسعه وب', 'کدنویسی خلاق']
+      },
+      'داستان‌گویی دیجیتال': {
+        desc: 'داستان‌گویی دیجیتال یعنی روایت احساسی برند برای انتقال ارزش و هدف.',
+        task: 'فرض کن برند قهوه ارگانیک ازت خواسته داستانش رو در شبکه‌های اجتماعی تعریف کنی. از دید کشاورز یا مشتری روایت کن تا حس ارتباط با طبیعت منتقل بشه. 🎯 خروجی نهایی: طرح سه‌مرحله‌ای از داستان برند (شروع، اوج، پیام نهایی).',
+        links: ['https://www.youtube.com/watch?v=LVKeO5IIR_A', 'https://www.aparat.com/v/XMSj0'],
+        keywords: ['داستان‌سرایی برند', 'بازاریابی احساسی', 'محتوای دیجیتال', 'روایت‌پردازی']
+      }
+    };
 
-    function goTo(pageId) {
-      document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-      document.getElementById(pageId).classList.add('active');
-      window.scrollTo(0, 0);
-    }
+    function goTo(pageId) {
+      document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+      document.getElementById(pageId).classList.add('active');
+      window.scrollTo(0, 0);
+    }
 
-    function chooseField(field) {
-      const f = data[field];
-      document.getElementById('challenge-title').textContent = field;
-      document.getElementById('challenge-desc').textContent = f.desc;
-      document.getElementById('challenge-task').textContent = f.task;
+    function chooseField(field) {
+      const f = data[field];
+      document.getElementById('challenge-title').textContent = field;
+      document.getElementById('challenge-desc').textContent = f.desc;
+      document.getElementById('challenge-task').textContent = f.task;
 
-      const linkDiv = document.getElementById('links');
-      linkDiv.innerHTML = f.links
-        .map(l => `<a href="${l}" target="_blank">${l}</a>`)
-        .join('');
+      const linkDiv = document.getElementById('links');
+      linkDiv.innerHTML = f.links.map(l => `<a href="${l}" target="_blank">${l}</a>`).join('');
 
-      const keyDiv = document.getElementById('keywords');
-      keyDiv.textContent = f.keywords.join(' • ');
+      const keyDiv = document.getElementById('keywords');
+      keyDiv.textContent = f.keywords.join(' • ');
 
-      goTo('challenge');
-    }
-  </script>
+      goTo('challenge');
+    }
+  </script>
 </body>
 </html>
